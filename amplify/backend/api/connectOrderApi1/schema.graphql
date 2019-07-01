@@ -1,0 +1,69 @@
+type Location {
+  lat: Float!
+  lon: Float!
+}
+
+input LocationInput {
+  lat: Float
+  lon: Float
+}
+
+type StoreDataTestConnection {
+	items: [StoreDataTest]
+	nextToken: Float
+	total: Int
+}
+
+type Query {
+  nearbyStores(location: LocationInput!, km: Int, size: Int, searchIndex: Float): StoreDataTestConnection
+}
+
+type StoreOwnerTest @model{
+	id: ID!
+	subjectName: String!
+	description: String
+	storeDataTest: [StoreDataTest] @connection(name: "OwnerStores")
+}
+
+type StoreDataTest @model @searchable {
+	id: ID!
+	subjectName: String!
+	description: String
+	location: Location!
+	storeOwnerTest: StoreOwnerTest @connection(name: "OwnerStores")
+	itemDataParentTest: [ItemDataParentTest] @connection(name: "StoreItems")
+}
+
+type ItemDataParentTest @model{
+	id: ID!
+	subjectName: String!
+	description: String
+	storeDataTest: StoreDataTest @connection(name: "StoreItems")
+	itemDataChildTest: [ItemDataChildTest] @connection(name: "ItemLabelItems")
+}
+
+type ItemDataChildTest @model{
+	id: ID!
+	subjectName: String!
+	description: String
+	cost: Int!
+	itemDataParentTest: ItemDataParentTest @connection(name: "ItemLabelItems")	
+	itemOptionDataParentTest: [ItemOptionDataParentTest] @connection(name: "ItemOptionLabels")
+}
+
+type ItemOptionDataParentTest @model{
+	id: ID!
+	subjectName: String!
+	description: String
+	isMandatory: Boolean
+	itemDataChildTest: ItemDataChildTest @connection(name: "ItemOptionLabels")
+	itemOptionDataChildTest: [ItemOptionDataChildTest] @connection(name: "OptionLabelOptions")
+}
+
+type ItemOptionDataChildTest @model{
+	id: ID!
+	subjectName: String!
+	description: String
+	cost: Int!
+	itemOptionDataParentTest: ItemOptionDataParentTest @connection(name: "OptionLabelOptions")
+}

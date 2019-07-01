@@ -1,0 +1,490 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateStoreOwnerTest($input: CreateStoreOwnerTestInput!) {
+  createStoreOwnerTest(input: $input) {
+    id
+    subjectName
+    description
+    storeDataTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateStoreOwnerTest($input: UpdateStoreOwnerTestInput!) {
+  updateStoreOwnerTest(input: $input) {
+    id
+    subjectName
+    description
+    storeDataTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteStoreOwnerTest($input: DeleteStoreOwnerTestInput!) {
+  deleteStoreOwnerTest(input: $input) {
+    id
+    subjectName
+    description
+    storeDataTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateStoreDataTest($input: CreateStoreDataTestInput!) {
+  createStoreDataTest(input: $input) {
+    id
+    subjectName
+    description
+    location {
+      lat
+      lon
+    }
+    storeOwnerTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        nextToken
+      }
+    }
+    itemDataParentTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateStoreDataTest($input: UpdateStoreDataTestInput!) {
+  updateStoreDataTest(input: $input) {
+    id
+    subjectName
+    description
+    location {
+      lat
+      lon
+    }
+    storeOwnerTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        nextToken
+      }
+    }
+    itemDataParentTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteStoreDataTest($input: DeleteStoreDataTestInput!) {
+  deleteStoreDataTest(input: $input) {
+    id
+    subjectName
+    description
+    location {
+      lat
+      lon
+    }
+    storeOwnerTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        nextToken
+      }
+    }
+    itemDataParentTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateItemDataParentTest($input: CreateItemDataParentTestInput!) {
+  createItemDataParentTest(input: $input) {
+    id
+    subjectName
+    description
+    storeDataTest {
+      id
+      subjectName
+      description
+      location {
+        lat
+        lon
+      }
+      storeOwnerTest {
+        id
+        subjectName
+        description
+      }
+      itemDataParentTest {
+        nextToken
+      }
+    }
+    itemDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateItemDataParentTest($input: UpdateItemDataParentTestInput!) {
+  updateItemDataParentTest(input: $input) {
+    id
+    subjectName
+    description
+    storeDataTest {
+      id
+      subjectName
+      description
+      location {
+        lat
+        lon
+      }
+      storeOwnerTest {
+        id
+        subjectName
+        description
+      }
+      itemDataParentTest {
+        nextToken
+      }
+    }
+    itemDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteItemDataParentTest($input: DeleteItemDataParentTestInput!) {
+  deleteItemDataParentTest(input: $input) {
+    id
+    subjectName
+    description
+    storeDataTest {
+      id
+      subjectName
+      description
+      location {
+        lat
+        lon
+      }
+      storeOwnerTest {
+        id
+        subjectName
+        description
+      }
+      itemDataParentTest {
+        nextToken
+      }
+    }
+    itemDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateItemDataChildTest($input: CreateItemDataChildTestInput!) {
+  createItemDataChildTest(input: $input) {
+    id
+    subjectName
+    description
+    cost
+    itemDataParentTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        id
+        subjectName
+        description
+      }
+      itemDataChildTest {
+        nextToken
+      }
+    }
+    itemOptionDataParentTest {
+      items {
+        id
+        subjectName
+        description
+        isMandatory
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateItemDataChildTest($input: UpdateItemDataChildTestInput!) {
+  updateItemDataChildTest(input: $input) {
+    id
+    subjectName
+    description
+    cost
+    itemDataParentTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        id
+        subjectName
+        description
+      }
+      itemDataChildTest {
+        nextToken
+      }
+    }
+    itemOptionDataParentTest {
+      items {
+        id
+        subjectName
+        description
+        isMandatory
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteItemDataChildTest($input: DeleteItemDataChildTestInput!) {
+  deleteItemDataChildTest(input: $input) {
+    id
+    subjectName
+    description
+    cost
+    itemDataParentTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        id
+        subjectName
+        description
+      }
+      itemDataChildTest {
+        nextToken
+      }
+    }
+    itemOptionDataParentTest {
+      items {
+        id
+        subjectName
+        description
+        isMandatory
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateItemOptionDataParentTest(
+  $input: CreateItemOptionDataParentTestInput!
+) {
+  createItemOptionDataParentTest(input: $input) {
+    id
+    subjectName
+    description
+    isMandatory
+    itemDataChildTest {
+      id
+      subjectName
+      description
+      cost
+      itemDataParentTest {
+        id
+        subjectName
+        description
+      }
+      itemOptionDataParentTest {
+        nextToken
+      }
+    }
+    itemOptionDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateItemOptionDataParentTest(
+  $input: UpdateItemOptionDataParentTestInput!
+) {
+  updateItemOptionDataParentTest(input: $input) {
+    id
+    subjectName
+    description
+    isMandatory
+    itemDataChildTest {
+      id
+      subjectName
+      description
+      cost
+      itemDataParentTest {
+        id
+        subjectName
+        description
+      }
+      itemOptionDataParentTest {
+        nextToken
+      }
+    }
+    itemOptionDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteItemOptionDataParentTest(
+  $input: DeleteItemOptionDataParentTestInput!
+) {
+  deleteItemOptionDataParentTest(input: $input) {
+    id
+    subjectName
+    description
+    isMandatory
+    itemDataChildTest {
+      id
+      subjectName
+      description
+      cost
+      itemDataParentTest {
+        id
+        subjectName
+        description
+      }
+      itemOptionDataParentTest {
+        nextToken
+      }
+    }
+    itemOptionDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateItemOptionDataChildTest(
+  $input: CreateItemOptionDataChildTestInput!
+) {
+  createItemOptionDataChildTest(input: $input) {
+    id
+    subjectName
+    description
+    cost
+    itemOptionDataParentTest {
+      id
+      subjectName
+      description
+      isMandatory
+      itemDataChildTest {
+        id
+        subjectName
+        description
+        cost
+      }
+      itemOptionDataChildTest {
+        nextToken
+      }
+    }
+  }
+}
+mutation UpdateItemOptionDataChildTest(
+  $input: UpdateItemOptionDataChildTestInput!
+) {
+  updateItemOptionDataChildTest(input: $input) {
+    id
+    subjectName
+    description
+    cost
+    itemOptionDataParentTest {
+      id
+      subjectName
+      description
+      isMandatory
+      itemDataChildTest {
+        id
+        subjectName
+        description
+        cost
+      }
+      itemOptionDataChildTest {
+        nextToken
+      }
+    }
+  }
+}
+mutation DeleteItemOptionDataChildTest(
+  $input: DeleteItemOptionDataChildTestInput!
+) {
+  deleteItemOptionDataChildTest(input: $input) {
+    id
+    subjectName
+    description
+    cost
+    itemOptionDataParentTest {
+      id
+      subjectName
+      description
+      isMandatory
+      itemDataChildTest {
+        id
+        subjectName
+        description
+        cost
+      }
+      itemOptionDataChildTest {
+        nextToken
+      }
+    }
+  }
+}

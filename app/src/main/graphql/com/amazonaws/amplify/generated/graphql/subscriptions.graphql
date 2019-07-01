@@ -1,0 +1,478 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateStoreOwnerTest {
+  onCreateStoreOwnerTest {
+    id
+    subjectName
+    description
+    storeDataTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateStoreOwnerTest {
+  onUpdateStoreOwnerTest {
+    id
+    subjectName
+    description
+    storeDataTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteStoreOwnerTest {
+  onDeleteStoreOwnerTest {
+    id
+    subjectName
+    description
+    storeDataTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateStoreDataTest {
+  onCreateStoreDataTest {
+    id
+    subjectName
+    description
+    location {
+      lat
+      lon
+    }
+    storeOwnerTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        nextToken
+      }
+    }
+    itemDataParentTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateStoreDataTest {
+  onUpdateStoreDataTest {
+    id
+    subjectName
+    description
+    location {
+      lat
+      lon
+    }
+    storeOwnerTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        nextToken
+      }
+    }
+    itemDataParentTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteStoreDataTest {
+  onDeleteStoreDataTest {
+    id
+    subjectName
+    description
+    location {
+      lat
+      lon
+    }
+    storeOwnerTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        nextToken
+      }
+    }
+    itemDataParentTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateItemDataParentTest {
+  onCreateItemDataParentTest {
+    id
+    subjectName
+    description
+    storeDataTest {
+      id
+      subjectName
+      description
+      location {
+        lat
+        lon
+      }
+      storeOwnerTest {
+        id
+        subjectName
+        description
+      }
+      itemDataParentTest {
+        nextToken
+      }
+    }
+    itemDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateItemDataParentTest {
+  onUpdateItemDataParentTest {
+    id
+    subjectName
+    description
+    storeDataTest {
+      id
+      subjectName
+      description
+      location {
+        lat
+        lon
+      }
+      storeOwnerTest {
+        id
+        subjectName
+        description
+      }
+      itemDataParentTest {
+        nextToken
+      }
+    }
+    itemDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteItemDataParentTest {
+  onDeleteItemDataParentTest {
+    id
+    subjectName
+    description
+    storeDataTest {
+      id
+      subjectName
+      description
+      location {
+        lat
+        lon
+      }
+      storeOwnerTest {
+        id
+        subjectName
+        description
+      }
+      itemDataParentTest {
+        nextToken
+      }
+    }
+    itemDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateItemDataChildTest {
+  onCreateItemDataChildTest {
+    id
+    subjectName
+    description
+    cost
+    itemDataParentTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        id
+        subjectName
+        description
+      }
+      itemDataChildTest {
+        nextToken
+      }
+    }
+    itemOptionDataParentTest {
+      items {
+        id
+        subjectName
+        description
+        isMandatory
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateItemDataChildTest {
+  onUpdateItemDataChildTest {
+    id
+    subjectName
+    description
+    cost
+    itemDataParentTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        id
+        subjectName
+        description
+      }
+      itemDataChildTest {
+        nextToken
+      }
+    }
+    itemOptionDataParentTest {
+      items {
+        id
+        subjectName
+        description
+        isMandatory
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteItemDataChildTest {
+  onDeleteItemDataChildTest {
+    id
+    subjectName
+    description
+    cost
+    itemDataParentTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        id
+        subjectName
+        description
+      }
+      itemDataChildTest {
+        nextToken
+      }
+    }
+    itemOptionDataParentTest {
+      items {
+        id
+        subjectName
+        description
+        isMandatory
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateItemOptionDataParentTest {
+  onCreateItemOptionDataParentTest {
+    id
+    subjectName
+    description
+    isMandatory
+    itemDataChildTest {
+      id
+      subjectName
+      description
+      cost
+      itemDataParentTest {
+        id
+        subjectName
+        description
+      }
+      itemOptionDataParentTest {
+        nextToken
+      }
+    }
+    itemOptionDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateItemOptionDataParentTest {
+  onUpdateItemOptionDataParentTest {
+    id
+    subjectName
+    description
+    isMandatory
+    itemDataChildTest {
+      id
+      subjectName
+      description
+      cost
+      itemDataParentTest {
+        id
+        subjectName
+        description
+      }
+      itemOptionDataParentTest {
+        nextToken
+      }
+    }
+    itemOptionDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteItemOptionDataParentTest {
+  onDeleteItemOptionDataParentTest {
+    id
+    subjectName
+    description
+    isMandatory
+    itemDataChildTest {
+      id
+      subjectName
+      description
+      cost
+      itemDataParentTest {
+        id
+        subjectName
+        description
+      }
+      itemOptionDataParentTest {
+        nextToken
+      }
+    }
+    itemOptionDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateItemOptionDataChildTest {
+  onCreateItemOptionDataChildTest {
+    id
+    subjectName
+    description
+    cost
+    itemOptionDataParentTest {
+      id
+      subjectName
+      description
+      isMandatory
+      itemDataChildTest {
+        id
+        subjectName
+        description
+        cost
+      }
+      itemOptionDataChildTest {
+        nextToken
+      }
+    }
+  }
+}
+subscription OnUpdateItemOptionDataChildTest {
+  onUpdateItemOptionDataChildTest {
+    id
+    subjectName
+    description
+    cost
+    itemOptionDataParentTest {
+      id
+      subjectName
+      description
+      isMandatory
+      itemDataChildTest {
+        id
+        subjectName
+        description
+        cost
+      }
+      itemOptionDataChildTest {
+        nextToken
+      }
+    }
+  }
+}
+subscription OnDeleteItemOptionDataChildTest {
+  onDeleteItemOptionDataChildTest {
+    id
+    subjectName
+    description
+    cost
+    itemOptionDataParentTest {
+      id
+      subjectName
+      description
+      isMandatory
+      itemDataChildTest {
+        id
+        subjectName
+        description
+        cost
+      }
+      itemOptionDataChildTest {
+        nextToken
+      }
+    }
+  }
+}

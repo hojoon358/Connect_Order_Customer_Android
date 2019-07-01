@@ -1,0 +1,374 @@
+# this is an auto generated file. This will be overwritten
+query NearbyStores(
+  $location: LocationInput!
+  $km: Int
+  $size: Int
+  $searchIndex: Float
+) {
+  nearbyStores(
+    location: $location
+    km: $km
+    size: $size
+    searchIndex: $searchIndex
+  ) {
+    items {
+      id
+      subjectName
+      description
+      location {
+        lat
+        lon
+      }
+      storeOwnerTest {
+        id
+        subjectName
+        description
+      }
+      itemDataParentTest {
+        nextToken
+      }
+    }
+    nextToken
+    total
+  }
+}
+query GetStoreOwnerTest($id: ID!) {
+  getStoreOwnerTest(id: $id) {
+    id
+    subjectName
+    description
+    storeDataTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+query ListStoreOwnerTests(
+  $filter: ModelStoreOwnerTestFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listStoreOwnerTests(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      subjectName
+      description
+      storeDataTest {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+query GetStoreDataTest($id: ID!) {
+  getStoreDataTest(id: $id) {
+    id
+    subjectName
+    description
+    location {
+      lat
+      lon
+    }
+    storeOwnerTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        nextToken
+      }
+    }
+    itemDataParentTest {
+      items {
+        id
+        subjectName
+        description
+      }
+      nextToken
+    }
+  }
+}
+query ListStoreDataTests(
+  $filter: ModelStoreDataTestFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listStoreDataTests(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      subjectName
+      description
+      location {
+        lat
+        lon
+      }
+      storeOwnerTest {
+        id
+        subjectName
+        description
+      }
+      itemDataParentTest {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+query GetItemDataParentTest($id: ID!) {
+  getItemDataParentTest(id: $id) {
+    id
+    subjectName
+    description
+    storeDataTest {
+      id
+      subjectName
+      description
+      location {
+        lat
+        lon
+      }
+      storeOwnerTest {
+        id
+        subjectName
+        description
+      }
+      itemDataParentTest {
+        nextToken
+      }
+    }
+    itemDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+query ListItemDataParentTests(
+  $filter: ModelItemDataParentTestFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listItemDataParentTests(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      subjectName
+      description
+      storeDataTest {
+        id
+        subjectName
+        description
+      }
+      itemDataChildTest {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+query GetItemDataChildTest($id: ID!) {
+  getItemDataChildTest(id: $id) {
+    id
+    subjectName
+    description
+    cost
+    itemDataParentTest {
+      id
+      subjectName
+      description
+      storeDataTest {
+        id
+        subjectName
+        description
+      }
+      itemDataChildTest {
+        nextToken
+      }
+    }
+    itemOptionDataParentTest {
+      items {
+        id
+        subjectName
+        description
+        isMandatory
+      }
+      nextToken
+    }
+  }
+}
+query ListItemDataChildTests(
+  $filter: ModelItemDataChildTestFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listItemDataChildTests(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      subjectName
+      description
+      cost
+      itemDataParentTest {
+        id
+        subjectName
+        description
+      }
+      itemOptionDataParentTest {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+query GetItemOptionDataParentTest($id: ID!) {
+  getItemOptionDataParentTest(id: $id) {
+    id
+    subjectName
+    description
+    isMandatory
+    itemDataChildTest {
+      id
+      subjectName
+      description
+      cost
+      itemDataParentTest {
+        id
+        subjectName
+        description
+      }
+      itemOptionDataParentTest {
+        nextToken
+      }
+    }
+    itemOptionDataChildTest {
+      items {
+        id
+        subjectName
+        description
+        cost
+      }
+      nextToken
+    }
+  }
+}
+query ListItemOptionDataParentTests(
+  $filter: ModelItemOptionDataParentTestFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listItemOptionDataParentTests(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      subjectName
+      description
+      isMandatory
+      itemDataChildTest {
+        id
+        subjectName
+        description
+        cost
+      }
+      itemOptionDataChildTest {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+query GetItemOptionDataChildTest($id: ID!) {
+  getItemOptionDataChildTest(id: $id) {
+    id
+    subjectName
+    description
+    cost
+    itemOptionDataParentTest {
+      id
+      subjectName
+      description
+      isMandatory
+      itemDataChildTest {
+        id
+        subjectName
+        description
+        cost
+      }
+      itemOptionDataChildTest {
+        nextToken
+      }
+    }
+  }
+}
+query ListItemOptionDataChildTests(
+  $filter: ModelItemOptionDataChildTestFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listItemOptionDataChildTests(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      subjectName
+      description
+      cost
+      itemOptionDataParentTest {
+        id
+        subjectName
+        description
+        isMandatory
+      }
+    }
+    nextToken
+  }
+}
+query SearchStoreDataTests(
+  $filter: SearchableStoreDataTestFilterInput
+  $sort: SearchableStoreDataTestSortInput
+  $limit: Int
+  $nextToken: Int
+) {
+  searchStoreDataTests(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      subjectName
+      description
+      location {
+        lat
+        lon
+      }
+      storeOwnerTest {
+        id
+        subjectName
+        description
+      }
+      itemDataParentTest {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}

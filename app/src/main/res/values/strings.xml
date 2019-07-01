@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Connect Order</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="qr_reader">qr_reader</string>
+    <string name="custom_action_bar">custom_action_bar</string>
+    <string name="Text">Text</string>
+    <string name="placeholder">placeholder</string>
+    <string name="currency">원</string>
+    <string name="km">km</string>
+    <string name="mandatory">필수</string>
+    <string name="optional">추가</string>
+    <string name="empty_shopping_cart_prompt">장바구니를 비우겠습니까?</string>
+    <string name="yes">예</string>
+    <string name="no">아니오</string>
+</resources>

@@ -1,0 +1,14 @@
+{
+    "clave": {
+        "awscloudformation": {
+            "AuthRoleName": "connectorder-clave-20190611170324-authRole",
+            "UnauthRoleArn": "arn:aws:iam::700361246960:role/connectorder-clave-20190611170324-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::700361246960:role/connectorder-clave-20190611170324-authRole",
+            "Region": "ap-northeast-2",
+            "DeploymentBucketName": "connectorder-clave-20190611170324-deployment",
+            "UnauthRoleName": "connectorder-clave-20190611170324-unauthRole",
+            "StackName": "connectorder-clave-20190611170324",
+            "StackId": "arn:aws:cloudformation:ap-northeast-2:700361246960:stack/connectorder-clave-20190611170324/61cc6210-8c1f-11e9-99c7-0254be68f5cc"
+        }
+    }
+}

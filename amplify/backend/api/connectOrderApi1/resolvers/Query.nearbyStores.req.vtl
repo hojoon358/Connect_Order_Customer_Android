@@ -1,0 +1,41 @@
+#set( $indexPath = "/storedatatest/doc/_search" )
+#set( $distance = $util.defaultIfNull($ctx.args.km, 200) )
+#set( $size = $util.defaultIfNull($ctx.args.size, 10) )
+#set( $searchIndex = $util.defaultIfNull($ctx.args.searchIndex, 0) )
+{
+    "version": "2017-02-28",
+    "operation": "GET",
+    "path": "$indexPath.toLowerCase()",
+    "params": {
+        "body": {
+            "size": "$size",
+            "query": {
+                "bool" : {
+                    "must" : {
+                        "match_all" : {}
+                    },
+                    "filter" : {
+                        "geo_distance" : {
+                            "distance" : "${distance}km",
+                            "location" : $util.toJson($ctx.args.location)
+                        }
+                    }
+                }
+            },
+            "search_after":[$searchIndex],
+            "sort": [
+                {
+                  "_geo_distance": {
+                    "location": { 
+                      "lat":  "$ctx.args.location.lat",
+                      "lon": "$ctx.args.location.lon"
+                    },
+                    "order":         "asc",
+                    "unit":          "km", 
+                    "distance_type": "plane" 
+                  }
+                }
+            ]
+        }
+    }
+}
