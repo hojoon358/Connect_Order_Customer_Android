@@ -9,6 +9,39 @@ mutation CreateStoreOwnerTest($input: CreateStoreOwnerTestInput!) {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -24,6 +57,39 @@ mutation UpdateStoreOwnerTest($input: UpdateStoreOwnerTestInput!) {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -39,6 +105,39 @@ mutation DeleteStoreOwnerTest($input: DeleteStoreOwnerTestInput!) {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -58,6 +157,31 @@ mutation CreateStoreDataTest($input: CreateStoreDataTestInput!) {
       subjectName
       description
       storeDataTest {
+        items {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -66,6 +190,48 @@ mutation CreateStoreDataTest($input: CreateStoreDataTestInput!) {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -85,6 +251,31 @@ mutation UpdateStoreDataTest($input: UpdateStoreDataTestInput!) {
       subjectName
       description
       storeDataTest {
+        items {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -93,6 +284,48 @@ mutation UpdateStoreDataTest($input: UpdateStoreDataTestInput!) {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -112,6 +345,31 @@ mutation DeleteStoreDataTest($input: DeleteStoreDataTestInput!) {
       subjectName
       description
       storeDataTest {
+        items {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -120,6 +378,48 @@ mutation DeleteStoreDataTest($input: DeleteStoreDataTestInput!) {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -142,8 +442,59 @@ mutation CreateItemDataParentTest($input: CreateItemDataParentTestInput!) {
         id
         subjectName
         description
+        storeDataTest {
+          items {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -153,6 +504,55 @@ mutation CreateItemDataParentTest($input: CreateItemDataParentTestInput!) {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -175,8 +575,59 @@ mutation UpdateItemDataParentTest($input: UpdateItemDataParentTestInput!) {
         id
         subjectName
         description
+        storeDataTest {
+          items {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -186,6 +637,55 @@ mutation UpdateItemDataParentTest($input: UpdateItemDataParentTestInput!) {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -208,8 +708,59 @@ mutation DeleteItemDataParentTest($input: DeleteItemDataParentTestInput!) {
         id
         subjectName
         description
+        storeDataTest {
+          items {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -219,6 +770,55 @@ mutation DeleteItemDataParentTest($input: DeleteItemDataParentTestInput!) {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -238,8 +838,69 @@ mutation CreateItemDataChildTest($input: CreateItemDataChildTestInput!) {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -249,6 +910,49 @@ mutation CreateItemDataChildTest($input: CreateItemDataChildTestInput!) {
         subjectName
         description
         isMandatory
+        itemDataChildTest {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
+        itemOptionDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemOptionDataParentTest {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -268,8 +972,69 @@ mutation UpdateItemDataChildTest($input: UpdateItemDataChildTestInput!) {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -279,6 +1044,49 @@ mutation UpdateItemDataChildTest($input: UpdateItemDataChildTestInput!) {
         subjectName
         description
         isMandatory
+        itemDataChildTest {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
+        itemOptionDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemOptionDataParentTest {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -298,8 +1106,69 @@ mutation DeleteItemDataChildTest($input: DeleteItemDataChildTestInput!) {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -309,6 +1178,49 @@ mutation DeleteItemDataChildTest($input: DeleteItemDataChildTestInput!) {
         subjectName
         description
         isMandatory
+        itemDataChildTest {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
+        itemOptionDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemOptionDataParentTest {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -331,8 +1243,79 @@ mutation CreateItemOptionDataParentTest(
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -342,6 +1325,35 @@ mutation CreateItemOptionDataParentTest(
         subjectName
         description
         cost
+        itemOptionDataParentTest {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
       }
       nextToken
     }
@@ -364,8 +1376,79 @@ mutation UpdateItemOptionDataParentTest(
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -375,6 +1458,35 @@ mutation UpdateItemOptionDataParentTest(
         subjectName
         description
         cost
+        itemOptionDataParentTest {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
       }
       nextToken
     }
@@ -397,8 +1509,79 @@ mutation DeleteItemOptionDataParentTest(
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -408,6 +1591,35 @@ mutation DeleteItemOptionDataParentTest(
         subjectName
         description
         cost
+        itemOptionDataParentTest {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
       }
       nextToken
     }
@@ -431,8 +1643,78 @@ mutation CreateItemOptionDataChildTest(
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemOptionDataParentTest {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -456,8 +1738,78 @@ mutation UpdateItemOptionDataChildTest(
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemOptionDataParentTest {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -481,8 +1833,78 @@ mutation DeleteItemOptionDataChildTest(
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemOptionDataParentTest {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }

@@ -23,7 +23,7 @@ type StoreOwnerTest @model{
 	subjectName: String!
 	description: String
 	storeDataTest: [StoreDataTest] @connection(name: "OwnerStores")
-}
+} 
 
 type StoreDataTest @model @searchable {
 	id: ID!

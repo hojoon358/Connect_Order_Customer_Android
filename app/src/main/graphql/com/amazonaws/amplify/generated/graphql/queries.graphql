@@ -23,8 +23,59 @@ query NearbyStores(
         id
         subjectName
         description
+        storeDataTest {
+          items {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -42,6 +93,39 @@ query GetStoreOwnerTest($id: ID!) {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -58,6 +142,31 @@ query ListStoreOwnerTests(
       subjectName
       description
       storeDataTest {
+        items {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -78,6 +187,31 @@ query GetStoreDataTest($id: ID!) {
       subjectName
       description
       storeDataTest {
+        items {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -86,6 +220,48 @@ query GetStoreDataTest($id: ID!) {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -109,8 +285,59 @@ query ListStoreDataTests(
         id
         subjectName
         description
+        storeDataTest {
+          items {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -134,8 +361,59 @@ query GetItemDataParentTest($id: ID!) {
         id
         subjectName
         description
+        storeDataTest {
+          items {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -145,6 +423,55 @@ query GetItemDataParentTest($id: ID!) {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -168,8 +495,69 @@ query ListItemDataParentTests(
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -190,8 +578,69 @@ query GetItemDataChildTest($id: ID!) {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -201,6 +650,49 @@ query GetItemDataChildTest($id: ID!) {
         subjectName
         description
         isMandatory
+        itemDataChildTest {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
+        itemOptionDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemOptionDataParentTest {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -225,8 +717,79 @@ query ListItemDataChildTests(
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -248,8 +811,79 @@ query GetItemOptionDataParentTest($id: ID!) {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -259,6 +893,35 @@ query GetItemOptionDataParentTest($id: ID!) {
         subjectName
         description
         cost
+        itemOptionDataParentTest {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
       }
       nextToken
     }
@@ -284,8 +947,78 @@ query ListItemOptionDataParentTests(
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemOptionDataParentTest {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -308,8 +1041,78 @@ query GetItemOptionDataChildTest($id: ID!) {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemOptionDataParentTest {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -335,6 +1138,49 @@ query ListItemOptionDataChildTests(
         subjectName
         description
         isMandatory
+        itemDataChildTest {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
+        itemOptionDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemOptionDataParentTest {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+          }
+          nextToken
+        }
       }
     }
     nextToken
@@ -364,8 +1210,59 @@ query SearchStoreDataTests(
         id
         subjectName
         description
+        storeDataTest {
+          items {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }

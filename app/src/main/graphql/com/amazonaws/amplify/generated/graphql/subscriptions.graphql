@@ -9,6 +9,39 @@ subscription OnCreateStoreOwnerTest {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -24,6 +57,39 @@ subscription OnUpdateStoreOwnerTest {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -39,6 +105,39 @@ subscription OnDeleteStoreOwnerTest {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -58,6 +157,31 @@ subscription OnCreateStoreDataTest {
       subjectName
       description
       storeDataTest {
+        items {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -66,6 +190,48 @@ subscription OnCreateStoreDataTest {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -85,6 +251,31 @@ subscription OnUpdateStoreDataTest {
       subjectName
       description
       storeDataTest {
+        items {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -93,6 +284,48 @@ subscription OnUpdateStoreDataTest {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -112,6 +345,31 @@ subscription OnDeleteStoreDataTest {
       subjectName
       description
       storeDataTest {
+        items {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -120,6 +378,48 @@ subscription OnDeleteStoreDataTest {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -142,8 +442,59 @@ subscription OnCreateItemDataParentTest {
         id
         subjectName
         description
+        storeDataTest {
+          items {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -153,6 +504,55 @@ subscription OnCreateItemDataParentTest {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -175,8 +575,59 @@ subscription OnUpdateItemDataParentTest {
         id
         subjectName
         description
+        storeDataTest {
+          items {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -186,6 +637,55 @@ subscription OnUpdateItemDataParentTest {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -208,8 +708,59 @@ subscription OnDeleteItemDataParentTest {
         id
         subjectName
         description
+        storeDataTest {
+          items {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -219,6 +770,55 @@ subscription OnDeleteItemDataParentTest {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -238,8 +838,69 @@ subscription OnCreateItemDataChildTest {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -249,6 +910,49 @@ subscription OnCreateItemDataChildTest {
         subjectName
         description
         isMandatory
+        itemDataChildTest {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
+        itemOptionDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemOptionDataParentTest {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -268,8 +972,69 @@ subscription OnUpdateItemDataChildTest {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -279,6 +1044,49 @@ subscription OnUpdateItemDataChildTest {
         subjectName
         description
         isMandatory
+        itemDataChildTest {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
+        itemOptionDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemOptionDataParentTest {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -298,8 +1106,69 @@ subscription OnDeleteItemDataChildTest {
         id
         subjectName
         description
+        location {
+          lat
+          lon
+        }
+        storeOwnerTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -309,6 +1178,49 @@ subscription OnDeleteItemDataChildTest {
         subjectName
         description
         isMandatory
+        itemDataChildTest {
+          id
+          subjectName
+          description
+          cost
+          itemDataParentTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              id
+              subjectName
+              description
+            }
+            itemDataChildTest {
+              nextToken
+            }
+          }
+          itemOptionDataParentTest {
+            items {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+            nextToken
+          }
+        }
+        itemOptionDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemOptionDataParentTest {
+              id
+              subjectName
+              description
+              isMandatory
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -329,8 +1241,79 @@ subscription OnCreateItemOptionDataParentTest {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -340,6 +1323,35 @@ subscription OnCreateItemOptionDataParentTest {
         subjectName
         description
         cost
+        itemOptionDataParentTest {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
       }
       nextToken
     }
@@ -360,8 +1372,79 @@ subscription OnUpdateItemOptionDataParentTest {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -371,6 +1454,35 @@ subscription OnUpdateItemOptionDataParentTest {
         subjectName
         description
         cost
+        itemOptionDataParentTest {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
       }
       nextToken
     }
@@ -391,8 +1503,79 @@ subscription OnDeleteItemOptionDataParentTest {
         id
         subjectName
         description
+        storeDataTest {
+          id
+          subjectName
+          description
+          location {
+            lat
+            lon
+          }
+          storeOwnerTest {
+            id
+            subjectName
+            description
+            storeDataTest {
+              nextToken
+            }
+          }
+          itemDataParentTest {
+            items {
+              id
+              subjectName
+              description
+            }
+            nextToken
+          }
+        }
+        itemDataChildTest {
+          items {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataParentTest {
+        items {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -402,6 +1585,35 @@ subscription OnDeleteItemOptionDataParentTest {
         subjectName
         description
         cost
+        itemOptionDataParentTest {
+          id
+          subjectName
+          description
+          isMandatory
+          itemDataChildTest {
+            id
+            subjectName
+            description
+            cost
+            itemDataParentTest {
+              id
+              subjectName
+              description
+            }
+            itemOptionDataParentTest {
+              nextToken
+            }
+          }
+          itemOptionDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
       }
       nextToken
     }
@@ -423,8 +1635,78 @@ subscription OnCreateItemOptionDataChildTest {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemOptionDataParentTest {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -446,8 +1728,78 @@ subscription OnUpdateItemOptionDataChildTest {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemOptionDataParentTest {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -469,8 +1821,78 @@ subscription OnDeleteItemOptionDataChildTest {
         subjectName
         description
         cost
+        itemDataParentTest {
+          id
+          subjectName
+          description
+          storeDataTest {
+            id
+            subjectName
+            description
+            location {
+              lat
+              lon
+            }
+            storeOwnerTest {
+              id
+              subjectName
+              description
+            }
+            itemDataParentTest {
+              nextToken
+            }
+          }
+          itemDataChildTest {
+            items {
+              id
+              subjectName
+              description
+              cost
+            }
+            nextToken
+          }
+        }
+        itemOptionDataParentTest {
+          items {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       itemOptionDataChildTest {
+        items {
+          id
+          subjectName
+          description
+          cost
+          itemOptionDataParentTest {
+            id
+            subjectName
+            description
+            isMandatory
+            itemDataChildTest {
+              id
+              subjectName
+              description
+              cost
+            }
+            itemOptionDataChildTest {
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
